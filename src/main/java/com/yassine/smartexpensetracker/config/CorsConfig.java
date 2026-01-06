@@ -15,23 +15,23 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Front Angular
+        // Origine EXACTE du front (pas "*")
         config.setAllowedOrigins(List.of("http://localhost:4200"));
 
-        // IMPORTANT: méthodes, y compris OPTIONS (préflight)
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        // Méthodes (inclut OPTIONS pour le préflight)
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
 
-        // IMPORTANT: Authorization pour Bearer JWT
+        // Headers nécessaires (Authorization + Content-Type)
         config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
 
-        // Optionnel: si tu veux lire certains headers côté front
-        config.setExposedHeaders(List.of("Authorization"));
+        // Si tu veux lire des headers côté front (optionnel)
+        config.setExposedHeaders(List.of("Set-Cookie"));
 
-        // JWT Bearer => pas besoin de cookies
-        config.setAllowCredentials(false);
+        // ✅ OBLIGATOIRE pour cookies (refresh HttpOnly)
+        config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", config);
+        source.registerCorsConfiguration("/**", config); // plus simple que /api/**
         return source;
     }
 }
