@@ -1,0 +1,191 @@
+<div class="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-indigo-500 selection:text-white relative overflow-hidden">
+
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute inset-0" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 32px 32px; opacity: 0.4;"></div>
+  </div>
+
+  <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute bottom-0 left-1/4 h-[500px] w-[500px] rounded-full bg-indigo-200/40 blur-[100px] mix-blend-multiply animate-blob"></div>
+    <div class="absolute top-0 right-1/4 h-[500px] w-[500px] rounded-full bg-purple-200/40 blur-[100px] mix-blend-multiply animate-blob animation-delay-2000"></div>
+  </div>
+
+  <div class="relative z-10 flex min-h-screen flex-col justify-center py-12 sm:px-6 lg:flex-row lg:items-center lg:gap-20 lg:px-8">
+
+    <div class="hidden lg:block lg:w-1/2 xl:w-[45%]">
+      <div class="relative">
+        <div class="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white/60 px-4 py-1.5 text-sm font-semibold text-indigo-700 backdrop-blur-md shadow-sm mb-8">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+          </span>
+          Early Access
+        </div>
+
+        <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl mb-6">
+          Start your <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">journey</span>.
+        </h1>
+
+        <p class="mt-4 text-lg leading-relaxed text-slate-600 max-w-lg">
+          Track your expenses with clean analytics.
+          Secure, fast, and designed for your financial growth.
+        </p>
+
+        <div class="mt-12 relative w-full max-w-md perspective-1000 group">
+          <div class="relative z-20 rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-2xl backdrop-blur-xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-xs font-medium text-slate-500 uppercase tracking-wider">Setup Status</div>
+                <div class="text-2xl font-bold text-slate-900">Ready</div>
+              </div>
+              <div class="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full w-full bg-indigo-500 rounded-full animate-pulse"></div>
+              </div>
+              <div class="flex justify-between text-xs text-slate-500">
+                <span>Account creation</span>
+                <span>100% Secure</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full max-w-md lg:w-1/2 xl:w-[35%]">
+      <div class="bg-white shadow-2xl shadow-indigo-200/50 rounded-3xl overflow-hidden border border-slate-100">
+
+        <div class="px-8 pt-8 pb-6 text-center">
+          <div class="h-12 w-12 bg-indigo-600 rounded-xl mx-auto flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/30 mb-4">
+            ET
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">Create Account</h2>
+          <p class="mt-2 text-sm text-slate-500">Enter your details to get started.</p>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" class="px-8 pb-8 space-y-5">
+
+          <div class="space-y-1">
+            <label class="block text-sm font-medium text-slate-700">Email address</label>
+            <div class="relative group">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+              </div>
+              <input
+                type="email"
+                formControlName="email"
+                placeholder="you@company.com"
+                class="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl leading-5 bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 sm:text-sm"
+              >
+            </div>
+            <p *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="text-xs text-red-500 flex items-center gap-1">
+              Please enter a valid email.
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-sm font-medium text-slate-700">Password</label>
+            <div class="relative group">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" /></svg>
+              </div>
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                formControlName="password"
+                placeholder="At least 8 characters"
+                class="block w-full pl-10 pr-10 py-3 border border-slate-200 rounded-xl leading-5 bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 sm:text-sm"
+              >
+              <button
+                type="button"
+                (click)="togglePassword()"
+                class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-indigo-600 transition-colors cursor-pointer focus:outline-none"
+              >
+                <span class="text-xs font-semibold uppercase tracking-wide">{{ showPassword ? 'Hide' : 'Show' }}</span>
+              </button>
+            </div>
+            <p *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="text-xs text-red-500 flex items-center gap-1">
+              Min 8 characters required.
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <label class="block text-sm font-medium text-slate-700">Confirm Password</label>
+            <div class="relative group">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-indigo-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+              </div>
+              <input
+                [type]="showConfirm ? 'text' : 'password'"
+                formControlName="confirmPassword"
+                placeholder="Repeat your password"
+                class="block w-full pl-10 pr-10 py-3 border border-slate-200 rounded-xl leading-5 bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200 sm:text-sm"
+              >
+              <button
+                type="button"
+                (click)="toggleConfirm()"
+                class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-indigo-600 transition-colors cursor-pointer focus:outline-none"
+              >
+                <span class="text-xs font-semibold uppercase tracking-wide">{{ showConfirm ? 'Hide' : 'Show' }}</span>
+              </button>
+            </div>
+
+            <p *ngIf="form.get('confirmPassword')?.touched && form.get('confirmPassword')?.invalid" class="text-xs text-red-500">
+              Confirmation is required.
+            </p>
+            <p *ngIf="form.get('confirmPassword')?.touched && passwordMismatch" class="text-xs text-red-500">
+              Passwords do not match.
+            </p>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex h-5 items-center">
+              <input
+                id="accept"
+                formControlName="accept"
+                type="checkbox"
+                class="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
+              >
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="accept" class="font-medium text-slate-700 cursor-pointer">I agree to the Terms</label>
+              <p class="text-slate-500">and Privacy Policy.</p>
+            </div>
+          </div>
+          <p *ngIf="form.get('accept')?.touched && form.get('accept')?.invalid" class="text-xs text-red-500 -mt-3 ml-7">
+            You must accept to continue.
+          </p>
+
+
+          <div *ngIf="error" class="rounded-xl bg-red-50 p-4 border border-red-100 flex items-start gap-3">
+            <svg class="h-5 w-5 text-red-400 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+            <div class="text-sm text-red-700 font-medium">{{ error }}</div>
+          </div>
+
+          <button
+            type="submit"
+            [disabled]="form.invalid || loading || passwordMismatch"
+            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-lg shadow-indigo-500/30 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 transition-all duration-200"
+          >
+            <svg *ngIf="loading" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            <span *ngIf="!loading">Create account</span>
+            <span *ngIf="loading">Creating...</span>
+          </button>
+        </form>
+
+        <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 flex items-center justify-center">
+          <p class="text-sm text-slate-500">
+            Already have an account?
+            <a routerLink="/login" class="font-semibold text-indigo-600 hover:text-indigo-500 transition-colors">Login</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-center text-xs text-slate-400">
+        © {{ year }} Smart Expense Tracker — Angular + Tailwind.
+      </p>
+    </div>
+  </div>
+</div>

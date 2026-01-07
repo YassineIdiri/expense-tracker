@@ -1,0 +1,100 @@
+<aside class="hidden md:flex flex-col w-72 h-screen fixed left-0 top-0 border-r border-gray-200 bg-white/80 backdrop-blur-xl z-50">
+
+  <div class="h-20 flex items-center px-8 border-b border-gray-100">
+    <div class="flex items-center gap-3">
+      <div class="h-9 w-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-200">D</div>
+      <span class="text-xl font-bold text-gray-900 tracking-tight">DashApp</span>
+    </div>
+  </div>
+
+  <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+    <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Menu</p>
+
+    <a routerLink="/dashboard" routerLinkActive="bg-indigo-50 text-indigo-600 shadow-sm ring-1 ring-indigo-200"
+       class="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:bg-gray-50 hover:text-gray-900">
+      <span class="text-xl">📊</span> Dashboard
+    </a>
+
+    <a routerLink="/categories" routerLinkActive="bg-indigo-50 text-indigo-600 shadow-sm ring-1 ring-indigo-200"
+       class="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:bg-gray-50 hover:text-gray-900">
+      <span class="text-xl">🏷️</span> Categories
+    </a>
+
+    <a routerLink="/expenses" routerLinkActive="bg-indigo-50 text-indigo-600 shadow-sm ring-1 ring-indigo-200"
+       class="group flex items-center gap-3 px-4 py-3 text-sm font-medium text-gray-600 rounded-xl transition-all hover:bg-gray-50 hover:text-gray-900">
+      <span class="text-xl">💸</span> Expenses
+    </a>
+  </nav>
+
+  <div class="p-4 border-t border-gray-100 mt-auto">
+    <!-- bouton logout (desktop sidebar) -->
+    <button
+      type="button"
+      (click)="onLogout()"
+      [disabled]="loggingOut"
+      class="cursor-pointer  mt-3 w-full flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:text-gray-900 disabled:opacity-60 disabled:cursor-not-allowed transition"
+    >
+      <svg *ngIf="loggingOut" class="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"></circle>
+        <path d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-width="4" opacity="0.75"></path>
+      </svg>
+
+      <span *ngIf="!loggingOut">Logout</span><span class="text-xl">➡️</span>
+      <span *ngIf="loggingOut">Logging out...</span>
+    </button>
+
+  </div>
+</aside>
+
+
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-[80px] bg-white border-t border-gray-200 flex justify-around items-center px-4 pb-2 pt-2 z-[999] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+
+  <a routerLink="/dashboard"
+     routerLinkActive="text-indigo-600"
+     [routerLinkActiveOptions]="{exact: true}"
+     class="flex flex-col items-center justify-center gap-1 w-16 h-full text-gray-400">
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+    </svg>
+    <span class="text-[10px] font-medium">Home</span>
+  </a>
+
+  <a routerLink="/categories"
+     routerLinkActive="text-indigo-600"
+     class="flex flex-col items-center justify-center gap-1 w-16 h-full text-gray-400">
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+    </svg>
+    <span class="text-[10px] font-medium">Cats</span>
+  </a>
+
+  <div class="relative -top-6">
+    <a routerLink="/expenses"
+       class="flex items-center justify-center h-14 w-14 rounded-full bg-indigo-600 text-white shadow-lg shadow-indigo-300 ring-4 ring-white active:scale-95 transition-transform">
+      <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+      </svg>
+    </a>
+  </div>
+
+  <button
+    type="button"
+    (click)="onLogout()"
+    [disabled]="loggingOut"
+    class="flex flex-col items-center justify-center gap-1 w-16 h-full text-gray-400 disabled:opacity-60"
+  >
+    <svg *ngIf="!loggingOut" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v1" />
+    </svg>
+
+    <svg *ngIf="loggingOut" class="w-6 h-6 animate-spin" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25"></circle>
+      <path d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-width="4" opacity="0.75"></path>
+    </svg>
+
+    <span class="text-[10px] font-medium">{{ loggingOut ? '...' : 'Logout' }}</span>
+  </button>
+
+
+</nav>
