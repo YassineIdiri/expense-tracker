@@ -39,6 +39,10 @@ Expense Tracker isn't just another CRUD app. It is an **expense tracking SaaS** 
 <div align="center">
   <table>
     <tr>
+      <td>Desktop Experience</td>
+      <td>Desktop Experience</td>
+      <tr>
+    <tr>
       <td align="center" width="70%">
         <strong>Desktop Experience</strong>
         <img src="https://github.com/user-attachments/assets/7ad7a120-1b7d-4968-baba-7bc87d6c9c98" alt="Desktop View" width="100%" />
