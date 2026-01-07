@@ -11,6 +11,8 @@
 ## 🖥️ Product Preview
 | <img width="1895" height="938" alt="exp" src="https://github.com/user-attachments/assets/7ad7a120-1b7d-4968-baba-7bc87d6c9c98" /> | <img width="424" height="889" alt="mobile" src="https://github.com/user-attachments/assets/b4b47bbb-adb0-423d b05c-90dd4ebf07c3" /> |
 
+<img width="424" height="889" alt="mobile" src="https://github.com/user-attachments/assets/f56a4b4e-6575-421f-94fe-6afbe470cf2e" />
+
 ---
 
 ## 🧠 Why Expense Tracker ?
