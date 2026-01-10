@@ -15,8 +15,8 @@ import { ResetPasswordComponent } from './features/auth/reset-password/reset-pas
 import { TermsComponent } from './features/terms/terms.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent , canActivate: [guestGuard]},
-  { path: 'terms', component: TermsComponent, canActivate: [guestGuard]}
+  { path: '', component: HomeComponent , canActivate: [guestGuard] },
+  { path: 'terms', component: TermsComponent, canActivate: [guestGuard] },
   { path: 'login', component: LoginComponent, canActivate: [guestGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [guestGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [guestGuard] },
