@@ -66,7 +66,7 @@ public class SecurityConfig {
 
                         // public auth routes
                         .requestMatchers("/api/auth/**").permitAll()
-
+                        .requestMatchers("/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

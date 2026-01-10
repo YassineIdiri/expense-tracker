@@ -1,0 +1,152 @@
+<div class="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-indigo-500 selection:text-white relative">
+
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute inset-0" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 32px 32px; opacity: 0.4;"></div>
+    <div class="absolute top-[-20%] left-[-10%] h-[600px] w-[600px] rounded-full bg-indigo-100/50 blur-[100px] animate-blob"></div>
+    <div class="absolute top-[20%] right-[-10%] h-[600px] w-[600px] rounded-full bg-purple-100/50 blur-[100px] animate-blob animation-delay-2000"></div>
+  </div>
+
+  <header class="relative z-20 mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg shadow-indigo-500/20">SE</div>
+      <span class="font-bold text-slate-800">SmartExpense</span>
+    </div>
+    <a routerLink="/" class="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors flex items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd" /></svg>
+      Back to Home
+    </a>
+  </header>
+
+  <main class="relative z-10 mx-auto max-w-7xl px-6 pb-24 lg:flex lg:gap-16">
+
+    <aside class="hidden lg:block lg:w-64 flex-shrink-0">
+      <div class="sticky top-24 space-y-8">
+        <div>
+          <h3 class="font-bold text-slate-900 mb-4">Table of Contents</h3>
+          <nav class="space-y-1 border-l-2 border-slate-100">
+            <button (click)="scrollTo('intro')" class="block w-full text-left pl-4 py-1.5 text-sm border-l-2 border-transparent hover:border-indigo-300 text-slate-500 hover:text-indigo-600 transition-all">Introduction</button>
+            <button (click)="scrollTo('usage')" class="block w-full text-left pl-4 py-1.5 text-sm border-l-2 border-transparent hover:border-indigo-300 text-slate-500 hover:text-indigo-600 transition-all">Acceptable Use</button>
+            <button (click)="scrollTo('accounts')" class="block w-full text-left pl-4 py-1.5 text-sm border-l-2 border-transparent hover:border-indigo-300 text-slate-500 hover:text-indigo-600 transition-all">User Accounts</button>
+            <button (click)="scrollTo('privacy')" class="block w-full text-left pl-4 py-1.5 text-sm border-l-2 border-transparent hover:border-indigo-300 text-slate-500 hover:text-indigo-600 transition-all">Privacy & Data</button>
+            <button (click)="scrollTo('liability')" class="block w-full text-left pl-4 py-1.5 text-sm border-l-2 border-transparent hover:border-indigo-300 text-slate-500 hover:text-indigo-600 transition-all">Limitation of Liability</button>
+            <button (click)="scrollTo('contact')" class="block w-full text-left pl-4 py-1.5 text-sm border-l-2 border-transparent hover:border-indigo-300 text-slate-500 hover:text-indigo-600 transition-all">Contact Us</button>
+          </nav>
+        </div>
+
+        <div class="rounded-2xl bg-indigo-50 p-4 border border-indigo-100">
+          <p class="text-xs text-indigo-800 font-medium mb-2">Need help?</p>
+          <p class="text-xs text-indigo-600 mb-3">Questions about our terms? Contact our legal team.</p>
+          <a href="mailto:legal@smartexpense.com" class="text-xs font-bold text-indigo-700 underline decoration-indigo-300 hover:decoration-indigo-700">legal&#64;smartexpense.com</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="lg:flex-1">
+      <div class="rounded-3xl bg-white border border-slate-200 shadow-xl shadow-slate-200/50 p-8 sm:p-12">
+
+        <div class="border-b border-slate-100 pb-8 mb-8">
+          <h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Terms and Conditions</h1>
+          <p class="mt-4 text-lg text-slate-500">Please read these terms carefully before using our service.</p>
+          <div class="mt-4 flex items-center gap-2 text-sm text-slate-400">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Last updated: {{ currentDate | date:'longDate' }}</span>
+          </div>
+        </div>
+
+        <div class="space-y-12 text-slate-600 leading-relaxed">
+
+          <section id="intro" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 text-sm">01</span>
+              Introduction
+            </h2>
+            <p>
+              Welcome to <strong>Smart Expense Tracker</strong>. By accessing or using our website and services, you agree to be bound by these Terms and Conditions and our Privacy Policy. If you do not agree with any part of these terms, you must not use our services.
+            </p>
+          </section>
+
+          <section id="usage" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 text-sm">02</span>
+              Acceptable Use
+            </h2>
+            <p class="mb-4">
+              You agree to use our service only for lawful purposes. You are prohibited from:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 marker:text-indigo-500">
+              <li>Using the service in any way that violates applicable national or international laws.</li>
+              <li>Attempting to gain unauthorized access to any portion of the system.</li>
+              <li>Interfering with the proper working of the SaaS (e.g., DDoS attacks, injecting malware).</li>
+              <li>Scraping or harvesting data without our explicit consent.</li>
+            </ul>
+          </section>
+
+          <section id="accounts" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 text-sm">03</span>
+              User Accounts
+            </h2>
+            <p class="mb-4">
+              To access certain features, you must create an account. You represent and warrant that:
+            </p>
+            <div class="rounded-xl bg-slate-50 p-5 border border-slate-100 text-sm">
+              <ul class="space-y-3">
+                <li class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>You are responsible for maintaining the confidentiality of your password.</span>
+                </li>
+                <li class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>You are at least 18 years of age or have legal parental consent.</span>
+                </li>
+                <li class="flex gap-3">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>The information you provide is accurate and complete.</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="privacy" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 text-sm">04</span>
+              Privacy & Data Ownership
+            </h2>
+            <p>
+              Your privacy is paramount. We do not sell your financial data to third parties.
+              While we take all reasonable steps to secure your data (using encryption and secure JWT tokens),
+              you retain ownership of the data you input into the Expense Tracker.
+            </p>
+          </section>
+
+          <section id="liability" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 text-sm">05</span>
+              Limitation of Liability
+            </h2>
+            <p>
+              The service is provided on an "AS IS" and "AS AVAILABLE" basis.
+              Smart Expense Tracker makes no warranties regarding the accuracy of the financial insights generated.
+              We shall not be held liable for any indirect, incidental, or consequential damages resulting from your use of the service.
+            </p>
+          </section>
+
+          <section id="contact" class="scroll-mt-28 pt-8 border-t border-slate-100">
+            <div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl p-8 text-white text-center">
+              <h3 class="text-xl font-bold mb-2">Still have questions?</h3>
+              <p class="text-indigo-100 mb-6">We're happy to answer any questions about our Terms of Service.</p>
+              <a href="mailto:support@smartexpense.com" class="inline-flex items-center justify-center rounded-xl bg-white text-indigo-600 px-6 py-3 text-sm font-bold hover:bg-indigo-50 transition-colors">
+                Contact Support
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-sm text-slate-400">
+        &copy; {{ currentDate | date:'yyyy' }} Smart Expense Tracker. All rights reserved.
+      </div>
+    </div>
+  </main>
+</div>

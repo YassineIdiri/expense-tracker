@@ -12,10 +12,11 @@ import { Categories } from './features/categories/categories.component';
 import { Expenses } from './features/expenses/expenses.component';
 import { ForgotPasswordComponent } from './features/auth/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './features/auth/reset-password/reset-password.component';
+import { TermsComponent } from './features/terms/terms.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-
+  { path: '', component: HomeComponent , canActivate: [guestGuard]},
+  { path: 'terms', component: TermsComponent, canActivate: [guestGuard]}
   { path: 'login', component: LoginComponent, canActivate: [guestGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [guestGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [guestGuard] },
