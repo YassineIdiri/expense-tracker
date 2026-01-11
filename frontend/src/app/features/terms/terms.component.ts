@@ -8,7 +8,6 @@ import { RouterLink } from '@angular/router';
   imports: [CommonModule, RouterLink],
   templateUrl: './terms.component.html',
   styles: [`
-    /* Animation des Blobs identique aux autres pages */
     @keyframes blob {
       0% { transform: translate(0px, 0px) scale(1); }
       33% { transform: translate(30px, -50px) scale(1.1); }
@@ -22,7 +21,6 @@ import { RouterLink } from '@angular/router';
       animation-delay: 2s;
     }
 
-    /* Smooth Scroll behavior for the whole page */
     :host {
       scroll-behavior: smooth;
     }
@@ -32,8 +30,6 @@ export class TermsComponent {
   currentDate = new Date();
 
   constructor() {}
-
-  // Fonction simple pour scroller vers une section
   scrollTo(elementId: string): void {
     const element = document.getElementById(elementId);
     if (element) {
