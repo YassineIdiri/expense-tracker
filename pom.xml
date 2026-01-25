@@ -11,8 +11,8 @@
     <groupId>com.yassine</groupId>
     <artifactId>expense-tracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>smart-expense-tracker</name>
-    <description>smart-expense-tracker</description>
+    <name>expense-tracker</name>
+    <description>expense-tracker</description>
     <url/>
     <licenses>
         <license/>

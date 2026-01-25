@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('smart-expense-tracker');
+  protected readonly title = signal('expense-tracker');
 }
